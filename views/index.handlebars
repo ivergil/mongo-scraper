@@ -1,0 +1,62 @@
+<h1 style="text-align: center" style= "color: blue">Tech News</h1>
+
+<hr>
+
+<div class="articles container">
+
+    {{#each articles }}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 style="color:blue">{{title}}</h2>
+      </div>
+      <div class="panel-body">
+        <h4>
+          {{sumary}}
+        </h4>
+        <a href= 'https://www.popularmechanics.com/technology/{{link}}'>Read more...</a>
+        <button data-id={{_id}} class="btn btn-danger pull-right save-article">Save Article</button>
+      </div>
+    </div>
+    <br />
+    <br />
+    {{/each}}
+
+</div>
+
+
+{{!-- OLD --}}
+{{!-- <ul>
+  {{#each articles}}
+    <li>
+        
+        <h3>{{title}}</h3>
+        <h5>{{sumary}}</h5>
+        <a href= 'https://www.popularmechanics.com/technology/{{link}}'>Read more...</a>
+        <hr> 
+<img src={{image}}>
+
+</li>
+  
+  {{/each}}
+</ul>
+
+
+<h2>Your Notes:</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="note-title">Title:</label>
+    <input type="text" id="note-title" name="note-title">
+  </div>
+
+  <div class="form-group">
+    <label for="note-body">Body:</label><br>
+    <textarea name="note-body" id="note-body" cols="30" rows="10"></textarea> <br>
+  </div>
+
+  <button type="submit">Save Note</button>
+  <button type="submit">Update Note</button>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/app.js"></script> --}}

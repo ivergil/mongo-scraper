@@ -10,30 +10,28 @@ module.exports = function (app) {
 
     app.get("/scrape", function (req, res) {
         // First, we grab the body of the html with axios
-        axios.get("http://www.ttnworldwide.com/").then(function (response) {
+        axios.get("https://www.popularmechanics.com/technology/").then(function (response) {
             // Then, we load that into cheerio and save it to $ for a shorthand selector
             var $ = cheerio.load(response.data);
 
             // Now, we grab every h2 within an article tag, and do the following:
             var result = {};
-            $("div.tleft").each(function (i, element) {
+            $("div.full-item").each(function (i, element) {
+            
                 // Save an empty result object
-
-
-
                 // Add the text and href of every link, and save them as properties of the result object
 
                 result.title = $(this)
-                    .children("div.storyblock2").children("div").children("a.fontLinkTitle2")
+                    .children("div.full-item-content").children("a.full-item-title")
                     .text();
                 result.link = $(this)
-                    .children("div.storyblock2").children("div").children("a.fontLinkTitle2")
+                    .children("div.full-item-content").children("a.full-item-title")
                     .attr("href");
                 result.sumary = $(this)
-                    .children("div.storyblock2").children("p.fontcontent")
+                    .children("div.full-item-content").children("div.full-item-dek").children("p")
                     .text();
                 result.image = $(this)
-                    .children("div.homeimagewrap2").children("img.homeimage2")
+                    .children("a.full-item-image").children("img.lazyimage")
                     .attr("src")
 
                 // Create a new Article using the `result` object built from scraping
@@ -50,7 +48,10 @@ module.exports = function (app) {
             });
 
             // Send a message to the client
-            res.send("Scrape is Done!! ");
+            res.send("Scrape Complete");
+            window.location = "localhost";
+            
+            
         });
     });
 
