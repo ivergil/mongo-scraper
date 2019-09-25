@@ -19,38 +19,44 @@
                     {{sumary}}
                 </h4>
                 <a href='https://www.popularmechanics.com/technology/{{link}}'>Read more...</a>
+                <br></br>
+                <div>
+                    <button type="button" class="btn btn-success pull-right add-note" data-id={{this._id}}>Add a Note
+                    </button>
+                    <button type="button" class="btn btn-danger pull-right see-notes" data-id={{this._id}}>See
+                        Notes</button>
+                    <button type="button" class="btn btn-danger pull-left delete-article" data-id={{this._id}}>Delete
+                        Article</button>
+                </div>
+            </div>
 
-            <button type="button" class="btn btn-success pull-right add-note" data-id={{this._id}}>Add a Note </button>
-            <button type="button" class="btn btn-danger pull-right delete-article" data-id={{this._id}}>Delete Article</button>
-        </div>
 
-
-        {{!-- {{#if notes}} --}}
-        {{!-- <div class="panel panel-info"> --}}
-        {{!-- <div class="panel-heading">
+            {{!-- {{#if notes}} --}}
+            {{!-- <div class="panel panel-info"> --}}
+            {{!-- <div class="panel-heading">
                 <h2>{{this.title}}</h2>
             </div> --}}
 
-        {{!-- </div> --}}
-        {{!-- {{/if}} --}}
+            {{!-- </div> --}}
+            {{!-- {{/if}} --}}
 
 
 
 
-    </div>
-
-
-
-
-    {{/each}}
-    {{else}}
-    <div class="panel panel-danger">
-        <div class="panel-body">
-            <h4>You have no saved articles.</h4>
         </div>
+
+
+
+
+        {{/each}}
+        {{else}}
+        <div class="panel panel-danger">
+            <div class="panel-body">
+                <h4>You have no saved articles.</h4>
+            </div>
+        </div>
+        {{/if}}
     </div>
-    {{/if}}
-</div>
 </div>
 
 <!--Clicked Notes Modal-->

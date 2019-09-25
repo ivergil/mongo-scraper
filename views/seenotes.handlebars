@@ -12,11 +12,11 @@
 
             
         </div>
-        {{!-- {{#if article.note}} --}}
-        {{#each this.note}}
+        {{#if articles.note}}
+        {{#each articles.note}}
         <div class="panel panel-success">
             <div class="panel-body">
-                <p class="previousNotes"> {{this.body}}</p>
+                <p class="previousNotes"> {{articles.note.body}}</p>
                 <button type="button" class="btn btn-danger deleteNote" data-note-id={{this._id}}
                     data-article-id={{this.article}}>X</button>
             </div>
@@ -28,7 +28,7 @@
                 <h4>No notes for this article yet.</h4>
             </div>
         </div> --}}
-        {{!-- {{/if}} --}}
+        {{/if}}
         <div class="form-group">
             <textarea id="noteText{{this._id}}" class="form-control" rows="4" placeholder="New Note"
                 required></textarea>
@@ -36,7 +36,7 @@
 
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-primary saveNote" data-id={{articles._id}}>Save Note</button>
+        <button type="button" class="btn btn-primary saveNote" data-id={{articles._id}}>Save a Note</button>
     </div>
 
 
