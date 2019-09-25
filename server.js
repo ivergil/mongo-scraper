@@ -2,6 +2,7 @@
 var express = require("express");
 // var logger = require("morgan");
 var mongoose = require("mongoose");
+var path = require("path");
 
 
 //require scraping packages
@@ -37,7 +38,7 @@ mongoose.connect("mongodb://localhost/travelNews", { useNewUrlParser: true });
 
 require("./routes/scrape-route.js")(app);
 require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 
 

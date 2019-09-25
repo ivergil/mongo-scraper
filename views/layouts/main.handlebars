@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-  
+
 </head>
 
 <body>
@@ -20,15 +20,21 @@
         <a class="navbar-brand" href="/">Mongo Scraper</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a id="saved" href="/saved">Saved Articles</a></li>
+        <li>
+          <a href="/">Home </a>
+        <li>
+          <a id="saved" href="/articles/saved/">Saved Articles</a>
+        </li>
+        <li>
+          <button class="btn btn-primary scrape" style="margin-top: 8px">Scrape New Articles!</button>
+        </li>
       </ul>
-      <form class="navbar-form navbar-left" action="/scrape" method="get">
-        <button class="btn btn-danger scrape">Scrape New Articles!</button>
-      </form>
+      {{!-- <form class="navbar-form navbar-left" action="/scrape" method="get"></form> --}}
+
+      {{!-- </form> --}}
     </div>
   </nav>
-  
+
 
 
   {{{ body }}}
@@ -36,7 +42,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-  {{!-- <script src="assets/js/app.js"></script> --}}
+  <script src="/assets/js/app.js"></script>
 
 </body>
 

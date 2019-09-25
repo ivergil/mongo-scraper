@@ -38,6 +38,7 @@ module.exports = function (app) {
                 db.Article.create(result)
                     .then(function (dbArticle) {
                         // View the added result in the console
+                        
                         console.log(dbArticle);
                     })
                     .catch(function (err) {
@@ -47,12 +48,8 @@ module.exports = function (app) {
 
             });
 
-            // Send a message to the client
             res.send("Scrape Complete");
-            window.location = "localhost";
-            
-            
+           
         });
     });
-
 };
