@@ -34,7 +34,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-var MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/travelNews";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/travelNews";
 //connect to mongo BD
 
 
