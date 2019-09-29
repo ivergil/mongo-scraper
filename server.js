@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var path = require("path");
 
 
+
 //require scraping packages
 var axios = require("axios");
 var cheerio = require("cheerio");
@@ -27,7 +28,10 @@ app.use(express.json());
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({
+  defaultLayout: "main",
+  partialsDir: path.join(__dirname, "/views/layouts/partials")
+}));
 app.set("view engine", "handlebars");
 
 //connect to mongo BD
@@ -44,7 +48,7 @@ require("./routes/api-routes.js")(app);
 
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
