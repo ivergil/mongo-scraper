@@ -34,9 +34,13 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
+var MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/travelNews";
 //connect to mongo BD
 
-mongoose.connect("mongodb://localhost/travelNews", { useNewUrlParser: true });
+
+mongoose.connect(MONGODB_URI);
+// mongoose.connect("mongodb://localhost/travelNews", { useNewUrlParser: true });
+
 
 //routes...code below
 
